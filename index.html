@@ -19,7 +19,7 @@
 
     .hero img {
       width: 100%;
-      max-width: 280px;
+      max-width: 260px;
       border-radius: 10px;
       margin-bottom: 15px;
     }
@@ -27,12 +27,12 @@
     .agent {
       font-size: 14px;
       color: #cbd5f5;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     h1 {
       font-size: 28px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .areas {
@@ -59,9 +59,10 @@
       margin: auto;
     }
 
+    /* 🔥 FIXED GRID */
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
     }
 
@@ -85,7 +86,6 @@
     .sold { color: #22c55e; }
     .rented { color: #38bdf8; }
 
-    /* FORM */
     .form-box {
       background: white;
       color: black;
@@ -117,11 +117,6 @@
       color: #555;
     }
 
-    /* FEATURED */
-    .featured {
-      margin-top: 40px;
-    }
-
     .featured img {
       width: 100%;
       border-radius: 12px;
@@ -143,8 +138,9 @@
 
   <h1>🏡 Find Your Next Home With Confidence</h1>
 
+  <!-- 🔥 IMPROVED AREA LINE -->
   <div class="areas">
-    Serving Orlando • Lakeland • Central Florida
+    Licensed in Florida • Serving Orlando, Lakeland & all Central Florida (East to West)
   </div>
 
   <div class="cta-buttons">
@@ -159,7 +155,7 @@
 
 </div>
 
-<!-- 🏡 REAL HOMES -->
+<!-- HOMES -->
 <div class="section">
   <h2>Homes Miguel Has Helped Clients Buy/Sell</h2>
 
@@ -183,7 +179,7 @@
   </div>
 </div>
 
-<!-- FORM CTA -->
+<!-- FORM -->
 <div class="section">
 
   <div class="form-box">
@@ -212,7 +208,7 @@
 
 </div>
 
-<!-- ⭐ FEATURED LISTING (NOW AT BOTTOM) -->
+<!-- FEATURED -->
 <div class="section featured">
   <h2>🔥 Featured Listing</h2>
 
