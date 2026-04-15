@@ -7,37 +7,38 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #0f172a, #334155);
+      background: linear-gradient(to bottom, #111827, #374151);
       color: white;
     }
 
+    /* HERO */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 50px 20px;
+      background: black;
     }
 
     .hero img {
       width: 100%;
-      max-width: 500px;
+      max-width: 350px;
       border-radius: 12px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
       margin-bottom: 20px;
     }
 
     .agent {
-      font-size: 16px;
+      font-size: 15px;
       color: #cbd5f5;
       margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 30px;
       margin-bottom: 10px;
     }
 
     .cta-buttons button {
-      margin: 8px;
-      padding: 12px 20px;
+      margin: 6px;
+      padding: 10px 18px;
       border-radius: 8px;
       border: none;
       cursor: pointer;
@@ -54,6 +55,7 @@
       color: white;
     }
 
+    /* SECTIONS */
     .section {
       padding: 40px 20px;
       text-align: center;
@@ -61,12 +63,22 @@
       margin: auto;
     }
 
+    /* GALLERY */
     .gallery img {
       width: 100%;
       border-radius: 12px;
       margin: 10px 0;
+      opacity: 0.95;
+      pointer-events: none; /* 🔥 prevents clicking */
     }
 
+    .label {
+      font-size: 13px;
+      color: #9ca3af;
+      margin-bottom: 15px;
+    }
+
+    /* FORM */
     .card {
       background: rgba(255,255,255,0.95);
       color: black;
@@ -106,7 +118,7 @@
 
     .disclaimer {
       font-size: 12px;
-      color: #94a3b8;
+      color: #9ca3af;
       margin-top: 10px;
     }
   </style>
@@ -117,7 +129,6 @@
 <!-- HERO -->
 <div class="hero">
 
-  <!-- YOUR IMAGE (LOGO + MIGUEL) -->
   <img src="hero.png">
 
   <div class="agent">
@@ -143,6 +154,10 @@
 <div class="section">
   <h2>Homes You Could Explore</h2>
 
+  <div class="label">
+    Example homes in your area — not actual listings
+  </div>
+
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
     <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
@@ -150,7 +165,7 @@
   </div>
 
   <div class="disclaimer">
-    Images are for inspiration purposes and may not represent actual listings.
+    Submit your preferences below to receive real, available homes.
   </div>
 </div>
 
