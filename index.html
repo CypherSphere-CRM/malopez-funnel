@@ -11,25 +11,34 @@
       color: white;
     }
 
-    .lang {
-      text-align: right;
-      padding: 10px 20px;
-    }
-
-    .lang button {
-      background: none;
-      border: 1px solid #94a3b8;
-      color: #94a3b8;
-      padding: 5px 10px;
-      margin-left: 5px;
-      cursor: pointer;
-      border-radius: 6px;
-    }
-
+    /* HERO */
     .hero {
+      position: relative;
       text-align: center;
       padding: 40px 20px;
       background: black;
+    }
+
+    /* 🔥 LANGUAGE TOGGLE */
+    .lang {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .lang button {
+      background: rgba(0,0,0,0.6);
+      border: 1px solid #94a3b8;
+      color: white;
+      padding: 6px 12px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .lang button:hover {
+      background: #1f2937;
     }
 
     .hero img {
@@ -67,6 +76,7 @@
     .call-btn { background: #2563eb; color: white; }
     .text-btn { background: #14b8a6; color: white; }
 
+    /* SECTION */
     .section {
       padding: 40px 20px;
       text-align: center;
@@ -74,6 +84,7 @@
       margin: auto;
     }
 
+    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -100,6 +111,7 @@
     .sold { color: #22c55e; }
     .rented { color: #38bdf8; }
 
+    /* FORM */
     .form-box {
       background: white;
       color: black;
@@ -141,30 +153,32 @@
 
 <body>
 
-<!-- LANGUAGE SWITCH -->
-<div class="lang">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('es')">ES</button>
-</div>
-
 <!-- HERO -->
 <div class="hero">
 
-  <img src="hero.png">
-
-  <div class="agent" data-en="Miguel Lopez • Trusted Local Realtor"
-                      data-es="Miguel Lopez • Agente de confianza">
-    Miguel Lopez • Trusted Local Realtor
+  <!-- LANGUAGE -->
+  <div class="lang">
+    <button onclick="setLang('en')">🇺🇸 EN</button>
+    <button onclick="setLang('es')">🇪🇸 ES</button>
   </div>
 
-  <h1 data-en="🏡 Find Your Next Home With Confidence"
-      data-es="🏡 Encuentra tu próximo hogar con confianza">
-      🏡 Find Your Next Home With Confidence
+  <img src="hero.png">
+
+  <div class="agent"
+       data-en="Miguel Lopez • Trusted Local Realtor"
+       data-es="Miguel Lopez • Agente de confianza">
+       Miguel Lopez • Trusted Local Realtor
+  </div>
+
+  <h1
+    data-en="🏡 Find Your Next Home With Confidence"
+    data-es="🏡 Encuentra tu próximo hogar con confianza">
+    🏡 Find Your Next Home With Confidence
   </h1>
 
   <div class="areas"
-       data-en="Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas"
-       data-es="Asesor inmobiliario licenciado en Florida • Representando clientes en Orlando, Lakeland y las mejores áreas del centro de Florida">
+    data-en="Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas"
+    data-es="Asesor inmobiliario licenciado en Florida • Representando clientes en Orlando, Lakeland y las mejores áreas del centro de Florida">
     Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas
   </div>
 
@@ -186,9 +200,10 @@
 
 <!-- HOMES -->
 <div class="section">
-  <h2 data-en="Homes Miguel Has Helped Clients Buy/Sell"
-      data-es="Propiedades en las que Miguel ha ayudado a sus clientes">
-      Homes Miguel Has Helped Clients Buy/Sell
+  <h2
+    data-en="Homes Miguel Has Helped Clients Buy/Sell"
+    data-es="Propiedades en las que Miguel ha ayudado a sus clientes">
+    Homes Miguel Has Helped Clients Buy/Sell
   </h2>
 
   <div class="grid">
@@ -216,9 +231,10 @@
 
   <div class="form-box">
 
-    <h3 data-en="Get Available Homes Near You"
-        data-es="Recibe propiedades disponibles cerca de ti">
-        Get Available Homes Near You
+    <h3
+      data-en="Get Available Homes Near You"
+      data-es="Recibe propiedades disponibles cerca de ti">
+      Get Available Homes Near You
     </h3>
 
     <form action="https://formspree.io/f/xkopdpgo" method="POST">
@@ -250,9 +266,10 @@
 
 <!-- FEATURED -->
 <div class="section featured">
-  <h2 data-en="🔥 Featured Listing"
-      data-es="🔥 Propiedad destacada">
-      🔥 Featured Listing
+  <h2
+    data-en="🔥 Featured Listing"
+    data-es="🔥 Propiedad destacada">
+    🔥 Featured Listing
   </h2>
 
   <img src="active-listing.jpg">
