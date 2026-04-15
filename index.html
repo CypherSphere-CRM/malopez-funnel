@@ -16,20 +16,54 @@
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
-      padding: 100px 20px;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+      padding: 80px 20px;
       text-align: center;
     }
 
-    .hero h1 {
-      font-size: 36px;
+    .logo {
+      width: 200px;
       margin-bottom: 15px;
+    }
+
+    .agent-img {
+      width: 180px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .agent {
+      font-size: 16px;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
     }
 
     .hero p {
       font-size: 18px;
       color: #e2e8f0;
+    }
+
+    .cta-buttons button {
+      margin: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .call-btn {
+      background: #2563eb;
+      color: white;
+    }
+
+    .text-btn {
+      background: #14b8a6;
+      color: white;
     }
 
     .section {
@@ -51,7 +85,6 @@
       padding: 30px;
       border-radius: 16px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
     }
 
     input, textarea {
@@ -60,14 +93,9 @@
       margin: 12px 0;
       border-radius: 8px;
       border: 1px solid #ccc;
-      font-size: 14px;
     }
 
-    textarea {
-      height: 110px;
-    }
-
-    button {
+    button.submit {
       width: 100%;
       padding: 16px;
       background: linear-gradient(90deg, #0f766e, #14b8a6);
@@ -75,86 +103,63 @@
       border: none;
       border-radius: 8px;
       font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
     }
 
     .note {
       font-size: 12px;
       color: #555;
-      margin-top: 10px;
-    }
-
-    .trust {
-      margin-top: 20px;
-      font-size: 14px;
-      color: #cbd5f5;
-    }
-
-    .disclaimer {
-      font-size: 12px;
-      color: #94a3b8;
-    }
-
-    h2 {
-      color: #e2e8f0;
     }
   </style>
 </head>
 
 <body>
 
-<!-- LANGUAGE -->
-<div class="lang">
-  <button onclick="setLang('en')">EN</button>
-  <button onclick="setLang('es')">ES</button>
-</div>
-
-<!-- HERO -->
 <div class="hero">
-  <h1 id="title">🏡 Find Your Next Home With Confidence</h1>
-  <p id="subtitle">Tell us what you're looking for and get homes that match your lifestyle ✨</p>
-  <div class="trust">Guided by a local real estate professional</div>
-</div>
 
-<!-- GALLERY -->
-<div class="section">
-  <h2 id="galleryTitle">Homes You Could Explore</h2>
-  <p id="gallerySub">A glimpse of what’s available in your area</p>
+  <!-- LOGO -->
+  <img src="miguel.png" class="logo">
 
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
-    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
-    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde">
+  <!-- AGENT IMAGE -->
+  <img src="miguel.png" class="agent-img">
+
+  <!-- AGENT INFO -->
+  <div class="agent">
+    Miguel Lopez • Trusted Local Realtor
   </div>
 
-  <p class="disclaimer">
-    Images are for inspiration purposes and may not represent the exact property.
-  </p>
+  <h1>🏡 Find Your Next Home With Confidence</h1>
+  <p>Tell us what you're looking for and get homes that match your lifestyle ✨</p>
+
+  <!-- CALL / TEXT -->
+  <div class="cta-buttons">
+    <a href="tel:4074480223">
+      <button class="call-btn">📞 Call Miguel</button>
+    </a>
+
+    <a href="sms:4074480223">
+      <button class="text-btn">💬 Text Miguel</button>
+    </a>
+  </div>
+
 </div>
 
 <!-- FORM -->
 <div class="section">
   <div class="card">
 
-    <h3 id="formTitle">Tell Us What You're Looking For</h3>
+    <h3>Tell Us What You're Looking For</h3>
 
     <form action="https://formspree.io/f/xkopdpgo" method="POST">
 
-      <input name="name" placeholder="Your Name" required id="nameInput">
-      <input name="email" type="email" placeholder="Your Email" required id="emailInput">
-      <input name="phone" placeholder="Phone Number" id="phoneInput">
+      <input name="name" placeholder="Your Name" required>
+      <input name="email" type="email" placeholder="Your Email" required>
+      <input name="phone" placeholder="Phone Number">
 
-      <textarea name="message" placeholder="Tell us what you're looking for (price, area, bedrooms...)" id="messageInput"></textarea>
+      <textarea name="message" placeholder="Price, area, bedrooms..."></textarea>
 
-      <input type="hidden" name="business" value="Malopez Realty">
+      <button type="submit" class="submit">Get Personalized Home Options</button>
 
-      <button type="submit" id="submitBtn">Get Personalized Home Options</button>
-
-      <p class="note" id="noteText">
+      <p class="note">
         Takes 10 seconds • No pressure • We’ll reach out shortly
       </p>
 
@@ -162,41 +167,6 @@
 
   </div>
 </div>
-
-<!-- SCRIPT -->
-<script>
-function setLang(lang) {
-
-  if (lang === 'es') {
-    document.getElementById("title").innerText = "🏡 Encuentra Tu Próxima Casa con Confianza";
-    document.getElementById("subtitle").innerText = "Cuéntanos qué buscas y recibe opciones adaptadas a ti ✨";
-    document.getElementById("galleryTitle").innerText = "Casas que Podrías Explorar";
-    document.getElementById("gallerySub").innerText = "Un vistazo a lo disponible en tu área";
-    document.getElementById("formTitle").innerText = "Cuéntanos Qué Buscas";
-    document.getElementById("nameInput").placeholder = "Tu Nombre";
-    document.getElementById("emailInput").placeholder = "Tu Correo Electrónico";
-    document.getElementById("phoneInput").placeholder = "Número de Teléfono";
-    document.getElementById("messageInput").placeholder = "¿Qué tipo de casa buscas (precio, área, habitaciones...) ?";
-    document.getElementById("submitBtn").innerText = "Recibir Opciones Personalizadas";
-    document.getElementById("noteText").innerText = "Toma 10 segundos • Sin presión • Te contactaremos pronto";
-  }
-
-  if (lang === 'en') {
-    document.getElementById("title").innerText = "🏡 Find Your Next Home With Confidence";
-    document.getElementById("subtitle").innerText = "Tell us what you're looking for and get homes that match your lifestyle ✨";
-    document.getElementById("galleryTitle").innerText = "Homes You Could Explore";
-    document.getElementById("gallerySub").innerText = "A glimpse of what’s available in your area";
-    document.getElementById("formTitle").innerText = "Tell Us What You're Looking For";
-    document.getElementById("nameInput").placeholder = "Your Name";
-    document.getElementById("emailInput").placeholder = "Your Email";
-    document.getElementById("phoneInput").placeholder = "Phone Number";
-    document.getElementById("messageInput").placeholder = "Tell us what you're looking for (price, area, bedrooms...)";
-    document.getElementById("submitBtn").innerText = "Get Personalized Home Options";
-    document.getElementById("noteText").innerText = "Takes 10 seconds • No pressure • We’ll reach out shortly";
-  }
-
-}
-</script>
 
 </body>
 </html>
