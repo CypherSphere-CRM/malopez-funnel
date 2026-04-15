@@ -1,41 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Find Homes | Malopez Realty</title>
+  <title>Malopez Realty | Find Your Home</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #1e3a8a, #334155);
-      color: #111;
+      background: linear-gradient(to bottom, #0f172a, #334155);
+      color: white;
     }
 
     .lang {
       text-align: right;
-      padding: 10px;
+      padding: 15px;
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-                  url('https://images.unsplash.com/photo-1572120360610-d971b9d7767c') center/cover;
-      color: white;
-      padding: 80px 20px;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                  url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
+      padding: 100px 20px;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 34px;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      font-size: 36px;
+      margin-bottom: 15px;
     }
 
     .hero p {
       font-size: 18px;
-      text-shadow: 1px 1px 8px rgba(0,0,0,0.8);
+      color: #e2e8f0;
     }
 
     .section {
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
       max-width: 700px;
       margin: auto;
@@ -43,44 +41,45 @@
 
     .gallery img {
       width: 100%;
-      border-radius: 10px;
-      margin: 10px 0;
+      border-radius: 12px;
+      margin: 12px 0;
     }
 
     .card {
-      background: #f8fafc;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      margin-top: 20px;
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
     }
 
     input, textarea {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 6px;
+      width: 95%;
+      padding: 14px;
+      margin: 12px 0;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      font-size: 14px;
     }
 
     textarea {
-      height: 100px;
-      resize: none;
+      height: 110px;
     }
 
     button {
       width: 100%;
-      padding: 14px;
-      background: #0f766e;
+      padding: 16px;
+      background: linear-gradient(90deg, #0f766e, #14b8a6);
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
     }
 
     button:hover {
-      background: #115e59;
+      opacity: 0.9;
     }
 
     .note {
@@ -89,14 +88,19 @@
       margin-top: 10px;
     }
 
-    .disclaimer {
-      font-size: 12px;
-      color: #ccc;
-      margin-top: 10px;
+    .trust {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #cbd5f5;
     }
 
-    h2, h3 {
-      color: white;
+    .disclaimer {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    h2 {
+      color: #e2e8f0;
     }
   </style>
 </head>
@@ -111,14 +115,15 @@
 
 <!-- HERO -->
 <div class="hero">
-  <h1 id="title">🏡 Get Access to Available Homes in Your Area</h1>
-  <p id="subtitle">Tell us what you're looking for and we’ll send you matching homes ✨</p>
+  <h1 id="title">🏡 Find Your Next Home With Confidence</h1>
+  <p id="subtitle">Tell us what you're looking for and get homes that match your lifestyle ✨</p>
+  <div class="trust">Guided by a local real estate professional</div>
 </div>
 
 <!-- GALLERY -->
 <div class="section">
   <h2 id="galleryTitle">Homes You Could Explore</h2>
-  <p id="gallerySub">Photos are examples of homes you may see ✨</p>
+  <p id="gallerySub">A glimpse of what’s available in your area</p>
 
   <div class="gallery">
     <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
@@ -143,11 +148,11 @@
       <input name="email" type="email" placeholder="Your Email" required id="emailInput">
       <input name="phone" placeholder="Phone Number" id="phoneInput">
 
-      <textarea name="message" placeholder="What type of home are you looking for?" id="messageInput"></textarea>
+      <textarea name="message" placeholder="Tell us what you're looking for (price, area, bedrooms...)" id="messageInput"></textarea>
 
       <input type="hidden" name="business" value="Malopez Realty">
 
-      <button type="submit" id="submitBtn">Get My Home Matches</button>
+      <button type="submit" id="submitBtn">Get Personalized Home Options</button>
 
       <p class="note" id="noteText">
         Takes 10 seconds • No pressure • We’ll reach out shortly
@@ -163,37 +168,35 @@
 function setLang(lang) {
 
   if (lang === 'es') {
-    document.getElementById("title").innerText = "🏡 Accede a Casas Disponibles en Tu Área";
-    document.getElementById("subtitle").innerText = "Cuéntanos qué buscas y te enviaremos opciones ✨";
+    document.getElementById("title").innerText = "🏡 Encuentra Tu Próxima Casa con Confianza";
+    document.getElementById("subtitle").innerText = "Cuéntanos qué buscas y recibe opciones adaptadas a ti ✨";
     document.getElementById("galleryTitle").innerText = "Casas que Podrías Explorar";
-    document.getElementById("gallerySub").innerText = "Fotos de ejemplo de propiedades disponibles";
-    document.getElementById("formTitle").innerText = "Cuéntanos Qué Estás Buscando";
+    document.getElementById("gallerySub").innerText = "Un vistazo a lo disponible en tu área";
+    document.getElementById("formTitle").innerText = "Cuéntanos Qué Buscas";
     document.getElementById("nameInput").placeholder = "Tu Nombre";
     document.getElementById("emailInput").placeholder = "Tu Correo Electrónico";
     document.getElementById("phoneInput").placeholder = "Número de Teléfono";
-    document.getElementById("messageInput").placeholder = "¿Qué tipo de casa estás buscando?";
-    document.getElementById("submitBtn").innerText = "Recibir Opciones";
+    document.getElementById("messageInput").placeholder = "¿Qué tipo de casa buscas (precio, área, habitaciones...) ?";
+    document.getElementById("submitBtn").innerText = "Recibir Opciones Personalizadas";
     document.getElementById("noteText").innerText = "Toma 10 segundos • Sin presión • Te contactaremos pronto";
   }
 
   if (lang === 'en') {
-    document.getElementById("title").innerText = "🏡 Get Access to Available Homes in Your Area";
-    document.getElementById("subtitle").innerText = "Tell us what you're looking for and we’ll send you matching homes ✨";
+    document.getElementById("title").innerText = "🏡 Find Your Next Home With Confidence";
+    document.getElementById("subtitle").innerText = "Tell us what you're looking for and get homes that match your lifestyle ✨";
     document.getElementById("galleryTitle").innerText = "Homes You Could Explore";
-    document.getElementById("gallerySub").innerText = "Photos are examples of homes you may see ✨";
+    document.getElementById("gallerySub").innerText = "A glimpse of what’s available in your area";
     document.getElementById("formTitle").innerText = "Tell Us What You're Looking For";
     document.getElementById("nameInput").placeholder = "Your Name";
     document.getElementById("emailInput").placeholder = "Your Email";
     document.getElementById("phoneInput").placeholder = "Phone Number";
-    document.getElementById("messageInput").placeholder = "What type of home are you looking for?";
-    document.getElementById("submitBtn").innerText = "Get My Home Matches";
+    document.getElementById("messageInput").placeholder = "Tell us what you're looking for (price, area, bedrooms...)";
+    document.getElementById("submitBtn").innerText = "Get Personalized Home Options";
     document.getElementById("noteText").innerText = "Takes 10 seconds • No pressure • We’ll reach out shortly";
   }
 
 }
 </script>
 
-</body>
-</html>
 </body>
 </html>
