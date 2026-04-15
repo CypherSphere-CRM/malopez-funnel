@@ -11,7 +11,6 @@
       color: white;
     }
 
-    /* HERO */
     .hero {
       text-align: center;
       padding: 50px 20px;
@@ -42,49 +41,53 @@
       border-radius: 8px;
       border: none;
       cursor: pointer;
-      font-size: 14px;
     }
 
-    .call-btn {
-      background: #2563eb;
-      color: white;
-    }
+    .call-btn { background: #2563eb; color: white; }
+    .text-btn { background: #14b8a6; color: white; }
 
-    .text-btn {
-      background: #14b8a6;
-      color: white;
-    }
-
-    /* SECTIONS */
     .section {
       padding: 40px 20px;
       text-align: center;
-      max-width: 700px;
+      max-width: 900px;
       margin: auto;
     }
 
-    /* GALLERY */
-    .gallery img {
-      width: 100%;
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .card-img {
+      background: #1f2937;
       border-radius: 12px;
-      margin: 10px 0;
-      opacity: 0.95;
-      pointer-events: none; /* 🔥 prevents clicking */
+      overflow: hidden;
+    }
+
+    .card-img img {
+      width: 100%;
+      display: block;
     }
 
     .label {
+      padding: 10px;
       font-size: 13px;
-      color: #9ca3af;
-      margin-bottom: 15px;
+      background: #0f172a;
     }
 
+    .sold { color: #22c55e; }
+    .rented { color: #38bdf8; }
+    .active { color: #f59e0b; }
+
     /* FORM */
-    .card {
-      background: rgba(255,255,255,0.95);
+    .form-box {
+      background: white;
       color: black;
       padding: 25px;
       border-radius: 12px;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      margin-top: 30px;
     }
 
     input, textarea {
@@ -95,10 +98,6 @@
       border: 1px solid #ccc;
     }
 
-    textarea {
-      height: 100px;
-    }
-
     button.submit {
       width: 100%;
       padding: 14px;
@@ -106,21 +105,13 @@
       color: white;
       border: none;
       border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
     }
 
     .note {
       font-size: 12px;
       color: #555;
-      margin-top: 10px;
     }
 
-    .disclaimer {
-      font-size: 12px;
-      color: #9ca3af;
-      margin-top: 10px;
-    }
   </style>
 </head>
 
@@ -137,7 +128,6 @@
 
   <h1>🏡 Find Your Next Home With Confidence</h1>
 
-  <!-- CALL / TEXT -->
   <div class="cta-buttons">
     <a href="tel:4074480223">
       <button class="call-btn">📞 Call Miguel</button>
@@ -150,28 +140,46 @@
 
 </div>
 
-<!-- HOUSES -->
+<!-- ⭐ FEATURED LISTING -->
 <div class="section">
-  <h2>Homes You Could Explore</h2>
+  <h2>🔥 Featured Listing</h2>
 
-  <div class="label">
-    Example homes in your area — not actual listings
+  <div class="card-img">
+    <img src="active-listing.jpg">
+    <div class="label active">
+      ACTIVE • Available Now
+    </div>
   </div>
+</div>
 
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c">
-    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae">
-    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde">
-  </div>
+<!-- 🏡 REAL HOMES -->
+<div class="section">
+  <h2>Homes Miguel Has Helped Clients Buy/Sell</h2>
 
-  <div class="disclaimer">
-    Submit your preferences below to receive real, available homes.
+  <div class="grid">
+
+    <div class="card-img">
+      <img src="home1.jpg">
+      <div class="label sold">SOLD</div>
+    </div>
+
+    <div class="card-img">
+      <img src="home2.jpg">
+      <div class="label sold">SOLD</div>
+    </div>
+
+    <div class="card-img">
+      <img src="rented-home.jpg">
+      <div class="label rented">RENTED</div>
+    </div>
+
   </div>
 </div>
 
 <!-- FORM -->
 <div class="section">
-  <div class="card">
+
+  <div class="form-box">
 
     <h3>Tell Us What You're Looking For</h3>
 
@@ -181,7 +189,7 @@
       <input name="email" type="email" placeholder="Your Email" required>
       <input name="phone" placeholder="Phone Number">
 
-      <textarea name="message" placeholder="Tell us what you're looking for (price, area, bedrooms...)"></textarea>
+      <textarea name="message" placeholder="Price, area, bedrooms..."></textarea>
 
       <button type="submit" class="submit">
         Get Personalized Home Options
@@ -194,6 +202,7 @@
     </form>
 
   </div>
+
 </div>
 
 </body>
