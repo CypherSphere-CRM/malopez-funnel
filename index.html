@@ -11,9 +11,24 @@
       color: white;
     }
 
+    .lang {
+      text-align: right;
+      padding: 10px 20px;
+    }
+
+    .lang button {
+      background: none;
+      border: 1px solid #94a3b8;
+      color: #94a3b8;
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
     .hero {
       text-align: center;
-      padding: 50px 20px;
+      padding: 40px 20px;
       background: black;
     }
 
@@ -59,7 +74,6 @@
       margin: auto;
     }
 
-    /* 🔥 FIXED GRID */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -127,29 +141,44 @@
 
 <body>
 
+<!-- LANGUAGE SWITCH -->
+<div class="lang">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('es')">ES</button>
+</div>
+
 <!-- HERO -->
 <div class="hero">
 
   <img src="hero.png">
 
-  <div class="agent">
+  <div class="agent" data-en="Miguel Lopez • Trusted Local Realtor"
+                      data-es="Miguel Lopez • Agente de confianza">
     Miguel Lopez • Trusted Local Realtor
   </div>
 
-  <h1>🏡 Find Your Next Home With Confidence</h1>
+  <h1 data-en="🏡 Find Your Next Home With Confidence"
+      data-es="🏡 Encuentra tu próximo hogar con confianza">
+      🏡 Find Your Next Home With Confidence
+  </h1>
 
-  <!-- 🔥 IMPROVED AREA LINE -->
-  <div class="areas">
-    Licensed in Florida • Serving Orlando, Lakeland & all Central Florida (East to West)
+  <div class="areas"
+       data-en="Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas"
+       data-es="Asesor inmobiliario licenciado en Florida • Representando clientes en Orlando, Lakeland y las mejores áreas del centro de Florida">
+    Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas
   </div>
 
   <div class="cta-buttons">
     <a href="tel:4074480223">
-      <button class="call-btn">📞 Call Miguel</button>
+      <button class="call-btn"
+        data-en="📞 Call Miguel"
+        data-es="📞 Llamar a Miguel">📞 Call Miguel</button>
     </a>
 
     <a href="sms:4074480223">
-      <button class="text-btn">💬 Text Miguel</button>
+      <button class="text-btn"
+        data-en="💬 Text Miguel"
+        data-es="💬 Enviar mensaje">💬 Text Miguel</button>
     </a>
   </div>
 
@@ -157,7 +186,10 @@
 
 <!-- HOMES -->
 <div class="section">
-  <h2>Homes Miguel Has Helped Clients Buy/Sell</h2>
+  <h2 data-en="Homes Miguel Has Helped Clients Buy/Sell"
+      data-es="Propiedades en las que Miguel ha ayudado a sus clientes">
+      Homes Miguel Has Helped Clients Buy/Sell
+  </h2>
 
   <div class="grid">
 
@@ -184,21 +216,29 @@
 
   <div class="form-box">
 
-    <h3>Get Available Homes Near You</h3>
+    <h3 data-en="Get Available Homes Near You"
+        data-es="Recibe propiedades disponibles cerca de ti">
+        Get Available Homes Near You
+    </h3>
 
     <form action="https://formspree.io/f/xkopdpgo" method="POST">
 
-      <input name="name" placeholder="Your Name" required>
-      <input name="email" type="email" placeholder="Your Email" required>
+      <input name="name" placeholder="Your Name">
+      <input name="email" type="email" placeholder="Your Email">
       <input name="phone" placeholder="Phone Number">
 
-      <textarea name="message" placeholder="Budget, area, bedrooms..."></textarea>
+      <textarea name="message"
+        placeholder="Budget, area, bedrooms..."></textarea>
 
-      <button type="submit" class="submit">
+      <button type="submit" class="submit"
+        data-en="Show Me Homes Available Now"
+        data-es="Mostrar propiedades disponibles ahora">
         Show Me Homes Available Now
       </button>
 
-      <div class="note">
+      <div class="note"
+        data-en="Takes 10 seconds • No pressure • We’ll reach out shortly"
+        data-es="Toma 10 segundos • Sin presión • Te contactaremos pronto">
         Takes 10 seconds • No pressure • We’ll reach out shortly
       </div>
 
@@ -210,14 +250,28 @@
 
 <!-- FEATURED -->
 <div class="section featured">
-  <h2>🔥 Featured Listing</h2>
+  <h2 data-en="🔥 Featured Listing"
+      data-es="🔥 Propiedad destacada">
+      🔥 Featured Listing
+  </h2>
 
   <img src="active-listing.jpg">
 
-  <p style="margin-top:10px; color:#cbd5f5;">
-    ⚡ This home won’t last — request details now
+  <p style="margin-top:10px; color:#cbd5f5;"
+     data-en="⚡ This home won’t last — request details now"
+     data-es="⚡ Esta propiedad no durará — solicita detalles ahora">
+     ⚡ This home won’t last — request details now
   </p>
 </div>
+
+<!-- SCRIPT -->
+<script>
+function setLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+</script>
 
 </body>
 </html>
