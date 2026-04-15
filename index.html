@@ -6,7 +6,7 @@
     body {
       font-family: Arial;
       margin: 0;
-      background: #f8fafc;
+      background: #e6f2ff; /* light blue */
     }
 
     .lang {
@@ -82,6 +82,12 @@
       background: #115e59;
     }
 
+    .note {
+      font-size: 12px;
+      color: #666;
+      margin-top: 10px;
+    }
+
     .disclaimer {
       font-size: 12px;
       color: #666;
@@ -101,7 +107,7 @@
 <!-- HERO -->
 <div class="hero">
   <h1 id="title">🏡 Get Access to Available Homes in Your Area</h1>
-  <p id="subtitle">See listings + schedule a private showing ✨</p>
+  <p id="subtitle">Tell us what you're looking for and we’ll send you matching homes ✨</p>
 </div>
 
 <!-- GALLERY -->
@@ -124,21 +130,23 @@
 <div class="section">
   <div class="card">
 
-    <h3 id="formTitle">Find Homes Near You</h3>
+    <h3 id="formTitle">Tell Us What You're Looking For</h3>
 
     <form action="https://formspree.io/f/xkopdpgo" method="POST">
 
       <input name="name" placeholder="Your Name" required id="nameInput">
-
       <input name="email" type="email" placeholder="Your Email" required id="emailInput">
-
       <input name="phone" placeholder="Phone Number" id="phoneInput">
 
-      <textarea name="message" placeholder="Any questions or details you'd like to share?" id="messageInput"></textarea>
+      <textarea name="message" placeholder="What type of home are you looking for?" id="messageInput"></textarea>
 
       <input type="hidden" name="business" value="Malopez Realty">
 
-      <button type="submit" id="submitBtn">See Available Homes</button>
+      <button type="submit" id="submitBtn">Get My Home Matches</button>
+
+      <p class="note" id="noteText">
+        Takes 10 seconds • No pressure • We’ll reach out shortly
+      </p>
 
     </form>
 
@@ -151,28 +159,30 @@ function setLang(lang) {
 
   if (lang === 'es') {
     document.getElementById("title").innerText = "🏡 Accede a Casas Disponibles en Tu Área";
-    document.getElementById("subtitle").innerText = "Ver propiedades y agendar una visita ✨";
+    document.getElementById("subtitle").innerText = "Cuéntanos qué buscas y te enviaremos opciones ✨";
     document.getElementById("galleryTitle").innerText = "Casas que Podrías Explorar";
     document.getElementById("gallerySub").innerText = "Fotos de ejemplo de propiedades disponibles";
-    document.getElementById("formTitle").innerText = "Encuentra Casas Cerca de Ti";
+    document.getElementById("formTitle").innerText = "Cuéntanos Qué Estás Buscando";
     document.getElementById("nameInput").placeholder = "Tu Nombre";
     document.getElementById("emailInput").placeholder = "Tu Correo Electrónico";
     document.getElementById("phoneInput").placeholder = "Número de Teléfono";
-    document.getElementById("messageInput").placeholder = "¿Tienes preguntas o buscas algo específico?";
-    document.getElementById("submitBtn").innerText = "Ver Casas Disponibles";
+    document.getElementById("messageInput").placeholder = "¿Qué tipo de casa estás buscando?";
+    document.getElementById("submitBtn").innerText = "Recibir Opciones";
+    document.getElementById("noteText").innerText = "Toma 10 segundos • Sin presión • Te contactaremos pronto";
   }
 
   if (lang === 'en') {
     document.getElementById("title").innerText = "🏡 Get Access to Available Homes in Your Area";
-    document.getElementById("subtitle").innerText = "See listings + schedule a private showing ✨";
+    document.getElementById("subtitle").innerText = "Tell us what you're looking for and we’ll send you matching homes ✨";
     document.getElementById("galleryTitle").innerText = "Homes You Could Explore";
     document.getElementById("gallerySub").innerText = "Photos are examples of homes you may see ✨";
-    document.getElementById("formTitle").innerText = "Find Homes Near You";
+    document.getElementById("formTitle").innerText = "Tell Us What You're Looking For";
     document.getElementById("nameInput").placeholder = "Your Name";
     document.getElementById("emailInput").placeholder = "Your Email";
     document.getElementById("phoneInput").placeholder = "Phone Number";
-    document.getElementById("messageInput").placeholder = "Any questions or details you'd like to share?";
-    document.getElementById("submitBtn").innerText = "See Available Homes";
+    document.getElementById("messageInput").placeholder = "What type of home are you looking for?";
+    document.getElementById("submitBtn").innerText = "Get My Home Matches";
+    document.getElementById("noteText").innerText = "Takes 10 seconds • No pressure • We’ll reach out shortly";
   }
 
 }
