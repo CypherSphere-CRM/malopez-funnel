@@ -7,7 +7,7 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background: linear-gradient(to bottom, #111827, #374151);
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
       color: white;
     }
 
@@ -19,20 +19,26 @@
 
     .hero img {
       width: 100%;
-      max-width: 350px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+      max-width: 280px;
+      border-radius: 10px;
+      margin-bottom: 15px;
     }
 
     .agent {
-      font-size: 15px;
+      font-size: 14px;
       color: #cbd5f5;
       margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 30px;
+      font-size: 28px;
       margin-bottom: 10px;
+    }
+
+    .areas {
+      font-size: 14px;
+      color: #94a3b8;
+      margin-bottom: 15px;
     }
 
     .cta-buttons button {
@@ -53,7 +59,6 @@
       margin: auto;
     }
 
-    /* GRID */
     .grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -79,7 +84,6 @@
 
     .sold { color: #22c55e; }
     .rented { color: #38bdf8; }
-    .active { color: #f59e0b; }
 
     /* FORM */
     .form-box {
@@ -105,11 +109,22 @@
       color: white;
       border: none;
       border-radius: 6px;
+      font-weight: bold;
     }
 
     .note {
       font-size: 12px;
       color: #555;
+    }
+
+    /* FEATURED */
+    .featured {
+      margin-top: 40px;
+    }
+
+    .featured img {
+      width: 100%;
+      border-radius: 12px;
     }
 
   </style>
@@ -128,6 +143,10 @@
 
   <h1>🏡 Find Your Next Home With Confidence</h1>
 
+  <div class="areas">
+    Serving Orlando • Lakeland • Central Florida
+  </div>
+
   <div class="cta-buttons">
     <a href="tel:4074480223">
       <button class="call-btn">📞 Call Miguel</button>
@@ -138,18 +157,6 @@
     </a>
   </div>
 
-</div>
-
-<!-- ⭐ FEATURED LISTING -->
-<div class="section">
-  <h2>🔥 Featured Listing</h2>
-
-  <div class="card-img">
-    <img src="active-listing.jpg">
-    <div class="label active">
-      ACTIVE • Available Now
-    </div>
-  </div>
 </div>
 
 <!-- 🏡 REAL HOMES -->
@@ -176,12 +183,12 @@
   </div>
 </div>
 
-<!-- FORM -->
+<!-- FORM CTA -->
 <div class="section">
 
   <div class="form-box">
 
-    <h3>Tell Us What You're Looking For</h3>
+    <h3>Get Available Homes Near You</h3>
 
     <form action="https://formspree.io/f/xkopdpgo" method="POST">
 
@@ -189,10 +196,10 @@
       <input name="email" type="email" placeholder="Your Email" required>
       <input name="phone" placeholder="Phone Number">
 
-      <textarea name="message" placeholder="Price, area, bedrooms..."></textarea>
+      <textarea name="message" placeholder="Budget, area, bedrooms..."></textarea>
 
       <button type="submit" class="submit">
-        Get Personalized Home Options
+        Show Me Homes Available Now
       </button>
 
       <div class="note">
@@ -203,6 +210,17 @@
 
   </div>
 
+</div>
+
+<!-- ⭐ FEATURED LISTING (NOW AT BOTTOM) -->
+<div class="section featured">
+  <h2>🔥 Featured Listing</h2>
+
+  <img src="active-listing.jpg">
+
+  <p style="margin-top:10px; color:#cbd5f5;">
+    ⚡ This home won’t last — request details now
+  </p>
 </div>
 
 </body>
