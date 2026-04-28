@@ -1,293 +1,300 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Malopez Realty | Find Your Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malopez Realty</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: linear-gradient(to bottom, #0f172a, #1e293b);
-      color: white;
-    }
+<style>
+body {margin:0;font-family:Arial;background:#0b0f14;color:white;}
 
-    /* HERO */
-    .hero {
-      position: relative;
-      text-align: center;
-      padding: 40px 20px;
-      background: black;
-    }
+/* NAV */
+nav {
+position:sticky;top:0;background:#000;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 20px;z-index:999;flex-wrap:wrap;
+}
 
-    /* 🔥 LANGUAGE TOGGLE */
-    .lang {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
+.menu {
+display:flex;flex-wrap:wrap;justify-content:center;width:100%;
+margin-top:10px;
+}
 
-    .lang button {
-      background: rgba(0,0,0,0.6);
-      border: 1px solid #94a3b8;
-      color: white;
-      padding: 6px 12px;
-      margin-left: 5px;
-      cursor: pointer;
-      border-radius: 20px;
-      font-size: 12px;
-    }
+.menu a {
+color:white;margin:5px 10px;text-decoration:none;font-size:13px;
+}
 
-    .lang button:hover {
-      background: #1f2937;
-    }
+/* HERO */
+.hero {
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('LivingRoom.jpg') center/cover;
+padding:80px 20px;text-align:center;
+}
 
-    .hero img {
-      width: 100%;
-      max-width: 260px;
-      border-radius: 10px;
-      margin-bottom: 15px;
-    }
+.hero h1 {font-size:26px;}
+.hero p {font-size:14px;}
 
-    .agent {
-      font-size: 14px;
-      color: #cbd5f5;
-      margin-bottom: 8px;
-    }
+/* SECTIONS */
+.section {padding:40px 15px;text-align:center;}
 
-    h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
+/* IMAGE GRID */
+.grid2 {
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
 
-    .areas {
-      font-size: 14px;
-      color: #94a3b8;
-      margin-bottom: 15px;
-    }
+.grid1 {margin-top:15px;}
 
-    .cta-buttons button {
-      margin: 6px;
-      padding: 10px 18px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-    }
+img {
+width:100%;
+max-width:320px;
+margin:auto;
+display:block;
+border-radius:10px;
+}
 
-    .call-btn { background: #2563eb; color: white; }
-    .text-btn { background: #14b8a6; color: white; }
+/* FORM */
+.card {
+background:white;color:black;padding:20px;border-radius:10px;
+max-width:400px;margin:auto;
+}
 
-    /* SECTION */
-    .section {
-      padding: 40px 20px;
-      text-align: center;
-      max-width: 900px;
-      margin: auto;
-    }
+input, textarea {
+width:100%;padding:12px;margin:10px 0;border-radius:6px;border:1px solid #ccc;
+}
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
+button {
+background:#0f766e;color:white;padding:14px;border:none;border-radius:6px;width:100%;
+}
 
-    .card-img {
-      background: #1f2937;
-      border-radius: 12px;
-      overflow: hidden;
-    }
+/* TESTIMONIALS */
+.review {
+background:white;color:black;padding:20px;border-radius:10px;
+margin-bottom:15px;text-align:left;max-width:700px;margin:auto;
+}
 
-    .card-img img {
-      width: 100%;
-      display: block;
-    }
+.star {color:#FFD700;}
 
-    .label {
-      padding: 10px;
-      font-size: 13px;
-      background: #0f172a;
-    }
+/* FAQ */
+.accordion {
+background:white;color:black;padding:15px;width:100%;
+border:none;text-align:left;margin:8px 0;border-radius:8px;
+cursor:pointer;
+}
 
-    .sold { color: #22c55e; }
-    .rented { color: #38bdf8; }
+.panel {
+display:none;background:#f1f1f1;padding:15px;color:black;
+}
 
-    /* FORM */
-    .form-box {
-      background: white;
-      color: black;
-      padding: 25px;
-      border-radius: 12px;
-      margin-top: 30px;
-    }
+/* FOOTER */
+footer {
+background:#0a1a33;padding:50px 20px;
+}
 
-    input, textarea {
-      width: 95%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+/* DESKTOP */
+@media(min-width:1024px){
 
-    button.submit {
-      width: 100%;
-      padding: 14px;
-      background: linear-gradient(90deg, #0f766e, #14b8a6);
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+.hero {padding:140px 20px;}
+.hero h1 {font-size:48px;}
+.hero p {font-size:18px;}
 
-    .note {
-      font-size: 12px;
-      color: #555;
-    }
+.section {max-width:1100px;margin:auto;}
 
-    .featured img {
-      width: 100%;
-      border-radius: 12px;
-    }
+.grid2 {gap:25px;}
 
-  </style>
+img {max-width:340px;}
+
+.menu {justify-content:flex-end;width:auto;margin-top:0;}
+
+nav {flex-wrap:nowrap;}
+}
+</style>
 </head>
 
 <body>
 
+<!-- NAV -->
+<nav>
+<div>Malopez Realty</div>
+
+<div class="menu">
+<a href="#form">Get Details</a>
+<a href="#why">Why Miguel</a>
+<a href="#area">Homes</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+</div>
+</nav>
+
 <!-- HERO -->
 <div class="hero">
-
-  <!-- LANGUAGE -->
-  <div class="lang">
-    <button onclick="setLang('en')">🇺🇸 EN</button>
-    <button onclick="setLang('es')">🇪🇸 ES</button>
-  </div>
-
-  <img src="hero.png">
-
-  <div class="agent"
-       data-en="Miguel Lopez • Trusted Local Realtor"
-       data-es="Miguel Lopez • Agente de confianza">
-       Miguel Lopez • Trusted Local Realtor
-  </div>
-
-  <h1
-    data-en="🏡 Find Your Next Home With Confidence"
-    data-es="🏡 Encuentra tu próximo hogar con confianza">
-    🏡 Find Your Next Home With Confidence
-  </h1>
-
-  <div class="areas"
-    data-en="Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas"
-    data-es="Asesor inmobiliario licenciado en Florida • Representando clientes en Orlando, Lakeland y las mejores áreas del centro de Florida">
-    Licensed Florida Real Estate Advisor • Representing clients across Orlando, Lakeland & Central Florida’s finest areas
-  </div>
-
-  <div class="cta-buttons">
-    <a href="tel:4074480223">
-      <button class="call-btn"
-        data-en="📞 Call Miguel"
-        data-es="📞 Llamar a Miguel">📞 Call Miguel</button>
-    </a>
-
-    <a href="sms:4074480223">
-      <button class="text-btn"
-        data-en="💬 Text Miguel"
-        data-es="💬 Enviar mensaje">💬 Text Miguel</button>
-    </a>
-  </div>
-
-</div>
-
-<!-- HOMES -->
-<div class="section">
-  <h2
-    data-en="Homes Miguel Has Helped Clients Buy/Sell"
-    data-es="Propiedades en las que Miguel ha ayudado a sus clientes">
-    Homes Miguel Has Helped Clients Buy/Sell
-  </h2>
-
-  <div class="grid">
-
-    <div class="card-img">
-      <img src="home1.jpg">
-      <div class="label sold">SOLD</div>
-    </div>
-
-    <div class="card-img">
-      <img src="home2.jpg">
-      <div class="label sold">SOLD</div>
-    </div>
-
-    <div class="card-img">
-      <img src="rented-home.jpg">
-      <div class="label rented">RENTED</div>
-    </div>
-
-  </div>
+<h1>Open House This Weekend • Limited Spots</h1>
+<p>Get full details and schedule your visit with Miguel Lopez</p>
 </div>
 
 <!-- FORM -->
-<div class="section">
+<div id="form" class="section">
+<div class="card">
 
-  <div class="form-box">
+<h3>Get Property Details</h3>
 
-    <h3
-      data-en="Get Available Homes Near You"
-      data-es="Recibe propiedades disponibles cerca de ti">
-      Get Available Homes Near You
-    </h3>
+<form id="leadForm" action="https://formspree.io/f/xkopdpgo" method="POST">
+<input name="name" placeholder="Full Name" required>
+<input name="phone" placeholder="Phone Number" required>
+<input name="email" placeholder="Email">
+<textarea name="message" placeholder="Budget, area, timeline..."></textarea>
+<button>See Details</button>
+<p style="font-size:12px;">Takes 10 seconds • Miguel will contact you</p>
+</form>
 
-    <form action="https://formspree.io/f/xkopdpgo" method="POST">
+</div>
+</div>
 
-      <input name="name" placeholder="Your Name">
-      <input name="email" type="email" placeholder="Your Email">
-      <input name="phone" placeholder="Phone Number">
+<!-- WHY -->
+<div id="why" class="section">
+<h2>Why Miguel Lopez</h2>
+<p>
+Miguel Lopez brings over 20 years of real estate experience helping buyers navigate the process with clarity and confidence. He understands your goals, simplifies every step, and ensures you move forward with the right strategy—without pressure.
+</p>
+</div>
 
-      <textarea name="message"
-        placeholder="Budget, area, bedrooms..."></textarea>
+<!-- AREAS -->
+<div id="area" class="section">
+<h2>Explore Opportunities</h2>
 
-      <button type="submit" class="submit"
-        data-en="Show Me Homes Available Now"
-        data-es="Mostrar propiedades disponibles ahora">
-        Show Me Homes Available Now
-      </button>
+<div class="grid2">
+<div>
+<img src="TownHome.jpg">
+<p>Suburban Homes</p>
+</div>
 
-      <div class="note"
-        data-en="Takes 10 seconds • No pressure • We’ll reach out shortly"
-        data-es="Toma 10 segundos • Sin presión • Te contactaremos pronto">
-        Takes 10 seconds • No pressure • We’ll reach out shortly
-      </div>
+<div>
+<img src="LivingRoom.jpg">
+<p>Urban Condos</p>
+</div>
+</div>
 
-    </form>
-
-  </div>
+<div class="grid1">
+<img src="Sold.png">
+<p>Investment Properties</p>
+</div>
 
 </div>
 
-<!-- FEATURED -->
-<div class="section featured">
-  <h2
-    data-en="🔥 Featured Listing"
-    data-es="🔥 Propiedad destacada">
-    🔥 Featured Listing
-  </h2>
+<!-- TESTIMONIALS -->
+<div id="reviews" class="section">
+<h2>Testimonials</h2>
 
-  <img src="active-listing.jpg">
-
-  <p style="margin-top:10px; color:#cbd5f5;"
-     data-en="⚡ This home won’t last — request details now"
-     data-es="⚡ Esta propiedad no durará — solicita detalles ahora">
-     ⚡ This home won’t last — request details now
-  </p>
+<div class="review">
+<div class="star">★★★★★</div>
+<strong>Carlos & Maria R.</strong><br>
+We tried for over a year to buy a home. Miguel stepped in and guided us clearly—within weeks we closed. He made everything possible.
 </div>
 
-<!-- SCRIPT -->
+<div class="review">
+<div class="star">★★★★★</div>
+<strong>Jessica M.</strong><br>
+As a single mom, I felt overwhelmed. Miguel made the process simple and helped me find the perfect home for my family.
+</div>
+
+<div class="review">
+<div class="star">★★★★★</div>
+<strong>Andrea L.</strong><br>
+I didn’t think I was ready, but Miguel showed me opportunities I didn’t know existed. He gave me confidence to move forward.
+</div>
+
+</div>
+
+<!-- FAQ -->
+<div id="faq" class="section">
+<h2>What to Expect</h2>
+
+<button class="accordion">Is the consultation really free?</button>
+<div class="panel">
+Your consultation is completely free with no obligation. It’s designed to give you clarity and direction.
+</div>
+
+<button class="accordion">Do I need to be pre-approved?</button>
+<div class="panel">
+No. Miguel can guide you through financing and connect you with lenders if needed.
+</div>
+
+<button class="accordion">Can you help me buy and sell?</button>
+<div class="panel">
+Yes. Miguel builds a strategy based on your timeline and goals.
+</div>
+
+<button class="accordion">How long does it take?</button>
+<div class="panel">
+Typically 25–35 minutes, enough to create a clear next step plan.
+</div>
+
+<button class="accordion">What happens after the call?</button>
+<div class="panel">
+You’ll receive guidance and next steps tailored to your situation.
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+<div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;justify-content:space-between;gap:40px;">
+
+<div style="max-width:350px;">
+<h3>Agent Trust Realty</h3>
+<strong>Miguel López, Realtor</strong>
+
+<p style="font-size:13px;color:#bbb;margin-top:10px;">
+Licensed real estate professionals helping buyers and sellers move confidently across the metro area.
+</p>
+
+<p style="font-size:12px;color:#777;margin-top:10px;">
+© 2026 Miguel Lopez Real Estate. Agent Trust Realty<br>
+All rights reserved.
+</p>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p style="font-size:13px;color:#bbb;">
+Phone: (407) 448-0223<br>
+Email: miguel.lopezrealtor@gmail.com<br>
+Website: https://malopezrealty.com/
+</p>
+</div>
+
+<div>
+<h4>Next step</h4>
+
+<a href="#form" style="
+background:#2f6df6;
+padding:10px 18px;
+border-radius:8px;
+color:white;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+">
+Book consult
+</a>
+
+<p style="font-size:12px;color:#bbb;margin-top:10px;">
+Your first conversation is always free.
+</p>
+</div>
+
+</div>
+</footer>
+
+<!-- FAQ SCRIPT -->
 <script>
-function setLang(lang) {
-  document.querySelectorAll("[data-en]").forEach(el => {
-    el.innerText = el.getAttribute("data-" + lang);
-  });
-}
+document.querySelectorAll(".accordion").forEach(btn=>{
+btn.onclick=()=>{
+let panel=btn.nextElementSibling;
+panel.style.display = panel.style.display==="block" ? "none":"block";
+};
+});
 </script>
 
 </body>
