@@ -8,7 +8,6 @@
 <style>
 body {margin:0;font-family:Arial;background:#0b0f14;color:white;}
 
-/* NAV */
 nav {
 position:sticky;top:0;background:#000;
 display:flex;justify-content:space-between;align-items:center;
@@ -24,7 +23,6 @@ margin-top:10px;
 color:white;margin:5px 10px;text-decoration:none;font-size:13px;
 }
 
-/* HERO */
 .hero {
 background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
 url('LivingRoom.jpg') center/cover;
@@ -34,10 +32,8 @@ padding:80px 20px;text-align:center;
 .hero h1 {font-size:26px;}
 .hero p {font-size:14px;}
 
-/* SECTIONS */
 .section {padding:40px 15px;text-align:center;}
 
-/* IMAGE GRID */
 .grid2 {
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -54,7 +50,6 @@ display:block;
 border-radius:10px;
 }
 
-/* FORM */
 .card {
 background:white;color:black;padding:20px;border-radius:10px;
 max-width:400px;margin:auto;
@@ -68,7 +63,6 @@ button {
 background:#0f766e;color:white;padding:14px;border:none;border-radius:6px;width:100%;
 }
 
-/* TESTIMONIALS */
 .review {
 background:white;color:black;padding:20px;border-radius:10px;
 margin-bottom:15px;text-align:left;max-width:700px;margin:auto;
@@ -76,7 +70,6 @@ margin-bottom:15px;text-align:left;max-width:700px;margin:auto;
 
 .star {color:#FFD700;}
 
-/* FAQ */
 .accordion {
 background:white;color:black;padding:15px;width:100%;
 border:none;text-align:left;margin:8px 0;border-radius:8px;
@@ -87,36 +80,47 @@ cursor:pointer;
 display:none;background:#f1f1f1;padding:15px;color:black;
 }
 
-/* FOOTER */
 footer {
 background:#0a1a33;padding:50px 20px;
 }
 
-/* DESKTOP */
 @media(min-width:1024px){
-
 .hero {padding:140px 20px;}
 .hero h1 {font-size:48px;}
 .hero p {font-size:18px;}
-
 .section {max-width:1100px;margin:auto;}
-
 .grid2 {gap:25px;}
-
 img {max-width:340px;}
-
 .menu {justify-content:flex-end;width:auto;margin-top:0;}
-
 nav {flex-wrap:nowrap;}
 }
 </style>
 </head>
 
+<a href="tel:14074480223" style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-size:14px;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.4);
+z-index:999;
+">
+📞 Call Miguel
+</a>
+
 <body>
 
 <!-- NAV -->
 <nav>
-<div>Malopez Realty</div>
+
+<div style="display:flex;align-items:center;gap:10px;">
+<span>Agent Trust Realty</span>
+</div>
 
 <div class="menu">
 <a href="#form">Get Details</a>
@@ -125,12 +129,28 @@ nav {flex-wrap:nowrap;}
 <a href="#reviews">Reviews</a>
 <a href="#faq">FAQ</a>
 </div>
+
+<div style="color:white;font-size:12px;cursor:pointer;">
+<span onclick="setLang('en')">EN</span> | 
+<span onclick="setLang('es')">ES</span>
+</div>
+
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Open House This Weekend • Limited Spots</h1>
-<p>Get full details and schedule your visit with Miguel Lopez</p>
+
+<h1 id="title">Open House This Weekend • Limited Spots</h1>
+
+<p id="subtitle">
+Get full details and schedule your visit with Miguel Lopez 
+<span onclick="setLang('es')" style="cursor:pointer;text-decoration:underline;">
+(Hablamos español)
+</span>
+</p>
+
+<img src="CALL US-PICTURE.png" style="width:90px;border-radius:10px;margin-top:15px;">
+
 </div>
 
 <!-- FORM -->
@@ -155,7 +175,10 @@ nav {flex-wrap:nowrap;}
 <div id="why" class="section">
 <h2>Why Miguel Lopez</h2>
 <p>
-Miguel Lopez brings over 20 years of real estate experience helping buyers navigate the process with clarity and confidence. He understands your goals, simplifies every step, and ensures you move forward with the right strategy—without pressure.
+👉 Miguel Lopez brings over 20 years of experience in the U.S. real estate market, Miguel helps buyers and sellers navigate every step with confidence.
+👉 Known for his dedication, local knowledge, and personal approach, he focuses on finding the right home and making the process simple and stress-free.
+
+👉 Serving Central Florida with trust and experience.
 </p>
 </div>
 
@@ -189,19 +212,19 @@ Miguel Lopez brings over 20 years of real estate experience helping buyers navig
 <div class="review">
 <div class="star">★★★★★</div>
 <strong>Carlos & Maria R.</strong><br>
-We tried for over a year to buy a home. Miguel stepped in and guided us clearly—within weeks we closed. He made everything possible.
+We tried for over a year to buy a home. Miguel stepped in and guided us clearly—within weeks we closed.
 </div>
 
 <div class="review">
 <div class="star">★★★★★</div>
 <strong>Jessica M.</strong><br>
-As a single mom, I felt overwhelmed. Miguel made the process simple and helped me find the perfect home for my family.
+As a single mom, I felt overwhelmed. Miguel made the process simple and helped me find the perfect home.
 </div>
 
 <div class="review">
 <div class="star">★★★★★</div>
 <strong>Andrea L.</strong><br>
-I didn’t think I was ready, but Miguel showed me opportunities I didn’t know existed. He gave me confidence to move forward.
+Miguel showed me opportunities I didn’t know existed. He gave me confidence to move forward.
 </div>
 
 </div>
@@ -211,29 +234,19 @@ I didn’t think I was ready, but Miguel showed me opportunities I didn’t know
 <h2>What to Expect</h2>
 
 <button class="accordion">Is the consultation really free?</button>
-<div class="panel">
-Your consultation is completely free with no obligation. It’s designed to give you clarity and direction.
-</div>
+<div class="panel">Yes. Your first consultation with Miguel Lopez is completely free and comes with no obligation to work with us. Our goal is to help you understand your options so you can make a confident decision—whether that means moving forward with us, with another agent, or not moving at all right now.</div>
 
 <button class="accordion">Do I need to be pre-approved?</button>
-<div class="panel">
-No. Miguel can guide you through financing and connect you with lenders if needed.
-</div>
+<div class="panel">No. Many clients come to us before they’ve spoken with a lender. If you’re early in the process, we’ll walk you through financing basics and, if helpful, introduce you to vetted lenders who match your situation..</div>
 
-<button class="accordion">Can you help me buy and sell?</button>
-<div class="panel">
-Yes. Miguel builds a strategy based on your timeline and goals.
-</div>
+<button class="accordion">Can you help me buy and/or sell?</button>
+<div class="panel">Absolutely. A large portion of our clients are buying and selling simultaneously. During your consultation, we’ll map out a strategy that accounts for timing, bridge options, and how to minimize the stress of coordinating two moves..</div>
 
-<button class="accordion">How long does it take?</button>
-<div class="panel">
-Typically 25–35 minutes, enough to create a clear next step plan.
-</div>
+<button class="accordion">How long does the consultation take?</button>
+<div class="panel">Most sessions run 25–35 minutes. That’s usually enough time to understand your goals, review neighborhood and pricing options, and outline a clear next‑step plan..</div>
 
 <button class="accordion">What happens after the call?</button>
-<div class="panel">
-You’ll receive guidance and next steps tailored to your situation.
-</div>
+<div class="panel">You’ll get a brief summary of what we discussed, a neighborhood or pricing snapshot, and recommended next steps. If you’d like to keep working together, we’ll suggest a simple starting point—like touring a few homes or doing a walk‑through of your current property..</div>
 
 </div>
 
@@ -244,6 +257,8 @@ You’ll receive guidance and next steps tailored to your situation.
 <div style="max-width:350px;">
 <h3>Agent Trust Realty</h3>
 <strong>Miguel López, Realtor</strong>
+
+<img src="CALL US-PICTURE.png" style="width:80px;margin-top:10px;border-radius:8px;">
 
 <p style="font-size:13px;color:#bbb;margin-top:10px;">
 Licensed real estate professionals helping buyers and sellers move confidently across the metro area.
@@ -260,7 +275,7 @@ All rights reserved.
 <p style="font-size:13px;color:#bbb;">
 Phone: (407) 448-0223<br>
 Email: miguel.lopezrealtor@gmail.com<br>
-Website: https://malopezrealty.com/
+Website: <a href="https://malopezrealty.com/" style="color:#bbb;">https://malopezrealty.com/</a>
 </p>
 </div>
 
@@ -295,7 +310,37 @@ let panel=btn.nextElementSibling;
 panel.style.display = panel.style.display==="block" ? "none":"block";
 };
 });
+
+function setLang(lang){
+
+if(lang==='es'){
+title.innerText="Open House este fin de semana • Cupos limitados";
+subtitle.innerText="Obtén todos los detalles y Miguel te contactará";
+}
+
+if(lang==='en'){
+title.innerText="Open House This Weekend • Limited Spots";
+subtitle.innerHTML='Get full details and schedule your visit with Miguel Lopez <span onclick="setLang(\'es\')" style="cursor:pointer;text-decoration:underline;">(Hablamos español)</span>';
+}
+}
 </script>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:14074480223" style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#22c55e;
+color:white;
+padding:14px 18px;
+border-radius:50px;
+font-size:14px;
+text-decoration:none;
+box-shadow:0 4px 10px rgba(0,0,0,.4);
+z-index:999;
+">
+📞 Call Miguel
+</a>
 
 </body>
 </html>
