@@ -311,17 +311,117 @@ panel.style.display = panel.style.display==="block" ? "none":"block";
 };
 });
 
+<script>
+document.querySelectorAll(".accordion").forEach(btn=>{
+btn.onclick=()=>{
+let panel=btn.nextElementSibling;
+panel.style.display = panel.style.display==="block" ? "none":"block";
+};
+});
+
 function setLang(lang){
 
+/* ===== NAV ===== */
+const navLinks = document.querySelectorAll(".menu a");
+
+/* ===== HERO ===== */
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+
+/* ===== FORM ===== */
+const formTitle = document.querySelector(".card h3");
+const btn = document.querySelector("button");
+const note = document.querySelector(".card p");
+
+/* ===== SECTIONS ===== */
+const whyTitle = document.querySelector("#why h2");
+const whyText = document.querySelector("#why p");
+
+const areaTitle = document.querySelector("#area h2");
+const areaItems = document.querySelectorAll("#area p");
+
+const reviewTitle = document.querySelector("#reviews h2");
+
+const faqTitle = document.querySelector("#faq h2");
+const faqQ = document.querySelectorAll(".accordion");
+const faqA = document.querySelectorAll(".panel");
+
+/* ===== LANGUAGE SWITCH ===== */
+
 if(lang==='es'){
+
+/* NAV */
+navLinks[0].innerText="Detalles";
+navLinks[1].innerText="Por qué Miguel";
+navLinks[2].innerText="Propiedades";
+navLinks[3].innerText="Testimonios";
+navLinks[4].innerText="Preguntas";
+
+/* HERO */
 title.innerText="Open House este fin de semana • Cupos limitados";
-subtitle.innerText="Obtén todos los detalles y Miguel te contactará";
+subtitle.innerText="Obtén todos los detalles y Miguel te contactará para coordinar tu visita";
+
+/* FORM */
+formTitle.innerText="Recibe los detalles de la propiedad";
+btn.innerText="Recibir información";
+note.innerText="Toma 10 segundos • Sin presión • Solo información";
+
+/* WHY */
+whyTitle.innerText="Por qué Miguel Lopez";
+whyText.innerText="Miguel Lopez tiene más de 20 años de experiencia en bienes raíces en Estados Unidos, ayudando a compradores y vendedores a navegar el proceso con claridad y confianza.";
+
+/* AREA */
+areaTitle.innerText="Explora oportunidades";
+areaItems[0].innerText="Casas suburbanas";
+areaItems[1].innerText="Condominios urbanos";
+areaItems[2].innerText="Propiedades de inversión";
+
+/* REVIEWS */
+reviewTitle.innerText="Testimonios";
+
+/* FAQ */
+faqTitle.innerText="Qué esperar";
+
+faqQ[0].innerText="¿La consulta es realmente gratis?";
+faqA[0].innerText="Sí. La consulta inicial es completamente gratuita y sin compromiso. Nuestro objetivo es brindarte claridad y ayudarte a tomar la mejor decisión.";
+
+faqQ[1].innerText="¿Necesito estar preaprobado?";
+faqA[1].innerText="No. Miguel puede guiarte en el proceso financiero y conectarte con prestamistas si es necesario.";
+
+faqQ[2].innerText="¿Puedes ayudarme a comprar y vender?";
+faqA[2].innerText="Sí. Se crea una estrategia personalizada basada en tu situación y objetivos.";
+
+faqQ[3].innerText="¿Cuánto dura la consulta?";
+faqA[3].innerText="Generalmente entre 25 y 35 minutos.";
+
+faqQ[4].innerText="¿Qué pasa después de la llamada?";
+faqA[4].innerText="Recibirás recomendaciones claras y próximos pasos según tu situación.";
+
 }
 
+/* ===== BACK TO ENGLISH ===== */
 if(lang==='en'){
+
 title.innerText="Open House This Weekend • Limited Spots";
 subtitle.innerHTML='Get full details and schedule your visit with Miguel Lopez <span onclick="setLang(\'es\')" style="cursor:pointer;text-decoration:underline;">(Hablamos español)</span>';
+
+navLinks[0].innerText="Get Details";
+navLinks[1].innerText="Why Miguel";
+navLinks[2].innerText="Homes";
+navLinks[3].innerText="Reviews";
+navLinks[4].innerText="FAQ";
+
+formTitle.innerText="Get Property Details";
+btn.innerText="Get Details & Speak with Miguel";
+note.innerText="Takes 10 seconds • No pressure • Just information";
+
+whyTitle.innerText="Why Miguel Lopez";
+areaTitle.innerText="Explore Opportunities";
+reviewTitle.innerText="Testimonials";
+faqTitle.innerText="What to Expect";
+
 }
+
 }
 </script>
 
