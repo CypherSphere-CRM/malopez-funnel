@@ -11,7 +11,6 @@ nav{display:flex;justify-content:space-between;padding:15px 20px;background:#0c1
 .menu a{margin:0 10px;color:white;text-decoration:none;font-size:14px;}
 
 .hero{padding:60px 20px;text-align:center;}
-
 .section{max-width:1100px;margin:auto;padding:40px 20px;text-align:center;}
 
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
@@ -30,26 +29,12 @@ button{background:#2c5be6;color:white;padding:12px;border:none;border-radius:6px
 footer{background:#0c1f3f;padding:40px 20px;font-size:14px;}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
 
-.footer-image{
-text-align:center;
-margin-top:30px;
-}
-.footer-image img{
-max-width:180px;
-opacity:.9;
-}
+.footer-image{text-align:center;margin-top:30px;}
+.footer-image img{max-width:180px;opacity:.9;}
 
 .call-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#2c5be6;
-color:white;
-padding:14px 18px;
-border-radius:50px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 4px 10px rgba(0,0,0,.4);
+position:fixed;bottom:20px;right:20px;background:#2c5be6;color:white;
+padding:14px 18px;border-radius:50px;text-decoration:none;z-index:999;
 }
 
 @media(max-width:768px){
@@ -73,7 +58,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.4);
 <a href="#faq" id="nav5">FAQ</a>
 </div>
 
-<div style="cursor:pointer;color:white;font-size:13px;" onclick="setLang('toggle')">
+<div style="cursor:pointer;color:white;font-size:13px;" onclick="toggleLang()">
 EN | ES
 </div>
 </nav>
@@ -90,10 +75,10 @@ EN | ES
 <h3 id="formTitle">Get Property Details</h3>
 
 <form id="leadForm" action="https://formspree.io/f/xkopdpgo" method="POST">
-<input name="name" placeholder="Full Name" required>
-<input name="phone" placeholder="Phone Number" required>
-<input name="email" placeholder="Email" required>
-<textarea name="notes" placeholder="Budget, area, timeline..."></textarea>
+<input id="name" name="name" placeholder="Full Name" required>
+<input id="phone" name="phone" placeholder="Phone Number" required>
+<input id="email" name="email" placeholder="Email" required>
+<textarea id="notes" name="notes" placeholder="Budget, area, timeline..."></textarea>
 <button type="submit" id="formBtn">Get Details & Speak with Miguel</button>
 </form>
 
@@ -133,20 +118,9 @@ EN | ES
 <div id="reviews" class="section">
 <h2 id="reviewTitle">Testimonials</h2>
 
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>"Miguel made everything simple."</p>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>"Guided me step by step."</p>
-</div>
-
-<div class="review">
-<div class="stars">★★★★★</div>
-<p>"Handled everything for me."</p>
-</div>
+<div class="review"><div class="stars">★★★★★</div><p>"Miguel made everything simple."</p></div>
+<div class="review"><div class="stars">★★★★★</div><p>"Guided me step by step."</p></div>
+<div class="review"><div class="stars">★★★★★</div><p>"Handled everything for me."</p></div>
 
 </div>
 
@@ -155,53 +129,45 @@ EN | ES
 <h2 id="faqTitle">What to Expect</h2>
 
 <button class="accordion" id="q1">Is the consultation really free?</button>
-<div class="panel"><p id="a1">
-Yes, it’s completely free. There’s no pressure, no commitment — just a simple conversation to understand what you’re looking for and how Miguel can help you move forward with confidence.
-</p></div>
+<div class="panel"><p id="a1">Yes, it’s completely free. There’s no pressure, no commitment — just a simple conversation to understand what you’re looking for and how Miguel can help you move forward with confidence.</p></div>
 
 <button class="accordion" id="q2">Do I need to be pre-approved?</button>
-<div class="panel"><p id="a2">
-Not at all. If you’re not pre-approved yet, Miguel can walk you through the process and even connect you with trusted lenders to get you started the right way.
-</p></div>
+<div class="panel"><p id="a2">Not at all. If you’re not pre-approved yet, Miguel can walk you through the process and even connect you with trusted lenders to get you started the right way.</p></div>
 
 <button class="accordion" id="q3">Can you help me buy and sell?</button>
-<div class="panel"><p id="a3">
-Absolutely. Whether you’re buying, selling, or doing both, Miguel creates a clear strategy so everything flows smoothly and you don’t feel overwhelmed.
-</p></div>
+<div class="panel"><p id="a3">Absolutely. Whether you’re buying, selling, or doing both, Miguel creates a clear strategy so everything flows smoothly and you don’t feel overwhelmed.</p></div>
 
 <button class="accordion" id="q4">How long does it take?</button>
-<div class="panel"><p id="a4">
-Most consultations take about 25 to 35 minutes. Just enough time to understand your goals, answer your questions, and map out your next steps.
-</p></div>
+<div class="panel"><p id="a4">Most consultations take about 25 to 35 minutes. Just enough time to understand your goals, answer your questions, and map out your next steps.</p></div>
 
 <button class="accordion" id="q5">What happens after?</button>
-<div class="panel"><p id="a5">
-After the call, you’ll have a clear plan. Whether that’s seeing homes, getting pre-approved, or preparing your property — you’ll know exactly what to do next.
-</p></div>
+<div class="panel"><p id="a5">After the call, you’ll have a clear plan. Whether that’s seeing homes, getting pre-approved, or preparing your property — you’ll know exactly what to do next.</p></div>
 
 </div>
 
 <!-- FOOTER -->
 <footer>
 <div class="footer-grid">
-<div>
+
+<div id="footer1">
 Miguel López, Realtor<br><br>
 Licensed real estate professionals helping buyers and sellers move confidently.<br><br>
 © 2026 Miguel Lopez Real Estate. Agent Trust Realty All rights reserved.
 </div>
 
-<div>
+<div id="footer2">
 <strong>Contact</strong><br>
 Phone: (407) 448-0223<br>
 Email: miguel.lopezrealtor@gmail.com<br>
 Website: <a href="https://malopezrealty.com" style="color:white;">malopezrealty.com</a>
 </div>
 
-<div>
+<div id="footer3">
 <strong>Next step</strong><br>
-<button>Book consult</button>
-<p>Your first conversation is always free.</p>
+<button id="footerBtn">Book consult</button>
+<p id="footerNote">Let’s map out your next move with clarity.</p>
 </div>
+
 </div>
 
 <div class="footer-image">
@@ -221,15 +187,14 @@ panel.style.display = panel.style.display==="block" ? "none":"block";
 });
 </script>
 
+<!-- 🔥 FIXED LANGUAGE TOGGLE -->
 <script>
-let currentLang="en";
+let lang="en";
 
-function setLang(mode){
-if(mode==="toggle"){
-currentLang=currentLang==="en"?"es":"en";
-}
+function toggleLang(){
+lang = (lang === "en") ? "es" : "en";
 
-if(currentLang==="es"){
+if(lang==="es"){
 
 nav1.innerText="Detalles";
 nav2.innerText="Por qué Miguel";
@@ -238,14 +203,19 @@ nav4.innerText="Reseñas";
 nav5.innerText="FAQ";
 
 title.innerText="Open House este fin de semana • Cupos limitados";
-subtitle.innerText="Obtén detalles y agenda tu visita";
+subtitle.innerText="Obtén todos los detalles y agenda tu visita";
 
-formTitle.innerText="Recibe detalles";
-formBtn.innerText="Recibir información";
-formNote.innerText="Toma 10 segundos • Sin presión";
+formTitle.innerText="Recibe detalles de la propiedad";
+formBtn.innerText="Recibir información y hablar con Miguel";
+formNote.innerText="Toma 10 segundos • Sin presión • Solo información";
+
+name.placeholder="Nombre completo";
+phone.placeholder="Teléfono";
+email.placeholder="Correo electrónico";
+notes.placeholder="Presupuesto, área, tiempo...";
 
 whyTitle.innerText="Por qué Miguel Lopez";
-whyText.innerHTML="👉 Más de 20 años de experiencia.<br><br>👉 Proceso claro y sin estrés.<br><br>👉 Florida Central.";
+whyText.innerHTML="👉 Más de 20 años de experiencia ayudando compradores y vendedores.<br><br>👉 Enfoque claro, personalizado y sin estrés.<br><br>👉 Sirviendo Florida Central.";
 
 areaTitle.innerText="Explora oportunidades";
 area1.innerText="Casas suburbanas";
@@ -257,19 +227,25 @@ reviewTitle.innerText="Reseñas";
 faqTitle.innerText="Qué esperar";
 
 q1.innerText="¿La consulta es realmente gratis?";
-a1.innerText="Sí, es completamente gratis. No hay presión ni compromiso. Es solo una conversación para entender lo que buscas y cómo ayudarte.";
+a1.innerText="Sí, es completamente gratis. No hay presión ni compromiso. Es simplemente una conversación para entender lo que buscas y cómo Miguel puede ayudarte con claridad.";
 
 q2.innerText="¿Necesito estar preaprobado?";
-a2.innerText="No. Miguel puede guiarte y conectarte con prestamistas confiables.";
+a2.innerText="No. Si aún no estás preaprobado, Miguel puede explicarte el proceso y conectarte con prestamistas confiables.";
 
 q3.innerText="¿Pueden ayudarme a comprar y vender?";
-a3.innerText="Claro. Miguel crea una estrategia para que todo fluya sin estrés.";
+a3.innerText="Claro que sí. Miguel crea una estrategia para que todo fluya sin estrés, ya sea que estés comprando, vendiendo o ambos.";
 
 q4.innerText="¿Cuánto dura la consulta?";
-a4.innerText="Entre 25 y 35 minutos normalmente.";
+a4.innerText="Normalmente entre 25 y 35 minutos. Tiempo suficiente para entender tu situación y darte claridad.";
 
-q5.innerText="¿Qué pasa después?";
-a5.innerText="Tendrás un plan claro con los próximos pasos.";
+q5.innerText="¿Qué pasa después de la llamada?";
+a5.innerText="Tendrás un plan claro. Ya sea ver propiedades, avanzar con financiamiento o preparar tu venta.";
+
+footer1.innerHTML="Miguel López, Realtor<br><br>Profesionales licenciados ayudando compradores y vendedores con confianza.<br><br>© 2026 Miguel Lopez Real Estate. Agent Trust Realty Todos los derechos reservados.";
+
+footer2.innerHTML="<strong>Contacto</strong><br>Teléfono: (407) 448-0223<br>Email: miguel.lopezrealtor@gmail.com<br>Sitio web: <a href='https://malopezrealty.com' style='color:white;'>malopezrealty.com</a>";
+
+footer3.innerHTML="<strong>Siguiente paso</strong><br><button>Agendar consulta</button><p>Define tu próximo paso con claridad y confianza.</p>";
 
 }else{
 location.reload();
