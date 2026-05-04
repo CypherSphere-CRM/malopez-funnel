@@ -7,12 +7,10 @@
 
 <style>
 body{margin:0;font-family:Arial;background:#081522;color:white;}
-nav{display:flex;justify-content:space-between;padding:15px 20px;background:#0c1f3f;}
+nav{display:flex;justify-content:space-between;padding:15px 20px;background:#0c1f3f;align-items:center;}
 .menu a{margin:0 10px;color:white;text-decoration:none;font-size:14px;}
 
 .hero{padding:60px 20px;text-align:center;}
-.hero h1{font-size:28px;}
-.hero p{opacity:.8;}
 
 .section{max-width:1100px;margin:auto;padding:40px 20px;text-align:center;}
 
@@ -31,6 +29,15 @@ button{background:#2c5be6;color:white;padding:12px;border:none;border-radius:6px
 
 footer{background:#0c1f3f;padding:40px 20px;font-size:14px;}
 .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;}
+
+.footer-image{
+text-align:center;
+margin-top:30px;
+}
+.footer-image img{
+max-width:180px;
+opacity:.9;
+}
 
 .call-btn{
 position:fixed;
@@ -57,52 +64,56 @@ box-shadow:0 4px 10px rgba(0,0,0,.4);
 <!-- NAV -->
 <nav>
 <div></div>
+
 <div class="menu">
-<a href="#form">Details</a>
-<a href="#why">Why Miguel</a>
-<a href="#area">Homes</a>
-<a href="#reviews">Reviews</a>
-<a href="#faq">FAQ</a>
+<a href="#form" id="nav1">Details</a>
+<a href="#why" id="nav2">Why Miguel</a>
+<a href="#area" id="nav3">Homes</a>
+<a href="#reviews" id="nav4">Reviews</a>
+<a href="#faq" id="nav5">FAQ</a>
+</div>
+
+<div style="cursor:pointer;color:white;font-size:13px;" onclick="setLang('toggle')">
+EN | ES
 </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
 <h1 id="title">Open House This Weekend • Limited Spots</h1>
-<p id="subtitle">
-Get full details and schedule your visit with Miguel Lopez 
-<span onclick="setLang('es')" style="cursor:pointer;text-decoration:underline;">(Hablamos español)</span>
-</p>
+<p id="subtitle">Get full details and schedule your visit with Miguel Lopez</p>
 </div>
 
 <!-- FORM -->
 <div id="form" class="section">
 <div class="card">
-<h3>Get Property Details</h3>
-<form action="https://formspree.io/f/xkopdpgo" method="POST">
-<input placeholder="Full Name" required>
-<input placeholder="Phone Number" required>
-<input placeholder="Email" required>
-<textarea placeholder="Budget, area, timeline..."></textarea>
-<button type="submit">Get Details & Speak with Miguel</button>
+<h3 id="formTitle">Get Property Details</h3>
+
+<form id="leadForm" action="https://formspree.io/f/xkopdpgo" method="POST">
+<input name="name" placeholder="Full Name" required>
+<input name="phone" placeholder="Phone Number" required>
+<input name="email" placeholder="Email" required>
+<textarea name="notes" placeholder="Budget, area, timeline..."></textarea>
+<button type="submit" id="formBtn">Get Details & Speak with Miguel</button>
 </form>
-<p>Takes 10 seconds • No pressure • Just information</p>
+
+<p id="formNote">Takes 10 seconds • No pressure • Just information</p>
 </div>
 </div>
 
 <!-- WHY -->
 <div id="why" class="section">
-<h2>Why Miguel Lopez</h2>
-<p>
-👉 Miguel Lopez brings over 20 years of experience in the U.S. real estate market, helping buyers and sellers navigate every step with confidence.<br><br>
-👉 Known for his dedication, local knowledge, and personal approach, he focuses on finding the right home and making the process simple and stress-free.<br><br>
-👉 Serving Central Florida with trust and experience.
+<h2 id="whyTitle">Why Miguel Lopez</h2>
+<p id="whyText">
+👉 Miguel Lopez brings over 20 years of experience in the U.S. real estate market.<br><br>
+👉 Personalized, clear, and stress-free process.<br><br>
+👉 Serving Central Florida.
 </p>
 </div>
 
 <!-- AREA -->
 <div id="area" class="section">
-<h2>Explore Opportunities</h2>
+<h2 id="areaTitle">Explore Opportunities</h2>
 
 <div class="grid">
 <img src="TownHome.jpg">
@@ -113,53 +124,50 @@ Get full details and schedule your visit with Miguel Lopez
 <img src="Sold.png" style="width:50%;">
 </div>
 
-<p>Suburban Homes</p>
-<p>Urban Condos</p>
-<p>Investment Properties</p>
+<p id="area1">Suburban Homes</p>
+<p id="area2">Urban Condos</p>
+<p id="area3">Investment Properties</p>
 </div>
 
 <!-- REVIEWS -->
 <div id="reviews" class="section">
-<h2>Testimonials</h2>
+<h2 id="reviewTitle">Testimonials</h2>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>"We struggled for months. Miguel made it simple and helped us close fast."</p>
-<strong>- Daniel & Maria</strong>
+<p>"Miguel made everything simple."</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>"As a single mom, I was overwhelmed. Miguel guided me step by step."</p>
-<strong>- Jessica R.</strong>
+<p>"Guided me step by step."</p>
 </div>
 
 <div class="review">
 <div class="stars">★★★★★</div>
-<p>"First time buying. I had no idea where to start. Miguel handled everything."</p>
-<strong>- Ashley P.</strong>
+<p>"Handled everything for me."</p>
 </div>
 
 </div>
 
 <!-- FAQ -->
 <div id="faq" class="section">
-<h2>What to Expect</h2>
+<h2 id="faqTitle">What to Expect</h2>
 
-<button class="accordion">Is the consultation really free?</button>
-<div class="panel"><p>Yes. Your first consultation with Miguel Lopez is completely free and comes with no obligation. The goal is to give you clarity and confidence.</p></div>
+<button class="accordion" id="q1">Is the consultation really free?</button>
+<div class="panel"><p id="a1">Yes. It is completely free.</p></div>
 
-<button class="accordion">Do I need to be pre-approved?</button>
-<div class="panel"><p>No. Miguel can guide you and connect you with lenders if needed.</p></div>
+<button class="accordion" id="q2">Do I need to be pre-approved?</button>
+<div class="panel"><p id="a2">No. Miguel can guide you.</p></div>
 
-<button class="accordion">Can you help me buy and sell?</button>
-<div class="panel"><p>Yes. Strategy is created to manage both smoothly.</p></div>
+<button class="accordion" id="q3">Can you help me buy and sell?</button>
+<div class="panel"><p id="a3">Yes. Full strategy is provided.</p></div>
 
-<button class="accordion">How long does the consultation take?</button>
-<div class="panel"><p>Usually 25–35 minutes.</p></div>
+<button class="accordion" id="q4">How long does it take?</button>
+<div class="panel"><p id="a4">About 25–35 minutes.</p></div>
 
-<button class="accordion">What happens after the call?</button>
-<div class="panel"><p>You’ll get clear next steps and recommendations.</p></div>
+<button class="accordion" id="q5">What happens after?</button>
+<div class="panel"><p id="a5">You get clear next steps.</p></div>
 
 </div>
 
@@ -167,10 +175,9 @@ Get full details and schedule your visit with Miguel Lopez
 <footer>
 <div class="footer-grid">
 <div>
-<strong>Agent Trust Realty</strong><br>
 Miguel López, Realtor<br><br>
-Licensed real estate professionals helping buyers and sellers move confidently across the metro area.<br><br>
-© 2026 Miguel Lopez Real Estate. All rights reserved.
+Licensed real estate professionals helping buyers and sellers move confidently.<br><br>
+© 2026 Miguel Lopez Real Estate. Agent Trust Realty All rights reserved.
 </div>
 
 <div>
@@ -186,35 +193,81 @@ Website: <a href="https://malopezrealty.com" style="color:white;">malopezrealty.
 <p>Your first conversation is always free.</p>
 </div>
 </div>
+
+<!-- IMAGE AT BOTTOM -->
+<div class="footer-image">
+<img src="CALL US-PICTURE.png">
+</div>
+
 </footer>
 
-<!-- CALL BUTTON -->
 <a href="tel:14074480223" class="call-btn">📞 Call Miguel</a>
 
+<!-- FAQ TOGGLE -->
 <script>
-
-// FAQ toggle
 document.querySelectorAll(".accordion").forEach(btn=>{
 btn.onclick=()=>{
 let panel=btn.nextElementSibling;
 panel.style.display = panel.style.display==="block" ? "none":"block";
 };
 });
+</script>
 
-// LANGUAGE SWITCH
-function setLang(lang){
+<!-- LANGUAGE -->
+<script>
+let currentLang="en";
 
-if(lang==="es"){
-document.getElementById("title").innerText="Open House este fin de semana • Cupos limitados";
-document.getElementById("subtitle").innerText="Obtén todos los detalles y Miguel te contactará para coordinar tu visita";
+function setLang(mode){
+if(mode==="toggle"){
+currentLang=currentLang==="en"?"es":"en";
 }
 
-if(lang==="en"){
+if(currentLang==="es"){
+
+nav1.innerText="Detalles";
+nav2.innerText="Por qué Miguel";
+nav3.innerText="Propiedades";
+nav4.innerText="Reseñas";
+nav5.innerText="FAQ";
+
+title.innerText="Open House este fin de semana • Cupos limitados";
+subtitle.innerText="Obtén detalles y agenda tu visita";
+
+formTitle.innerText="Recibe detalles";
+formBtn.innerText="Recibir información";
+formNote.innerText="Toma 10 segundos • Sin presión";
+
+whyTitle.innerText="Por qué Miguel Lopez";
+whyText.innerHTML="👉 Más de 20 años de experiencia.<br><br>👉 Proceso claro y sin estrés.<br><br>👉 Florida Central.";
+
+areaTitle.innerText="Explora oportunidades";
+area1.innerText="Casas suburbanas";
+area2.innerText="Condos urbanos";
+area3.innerText="Propiedades de inversión";
+
+reviewTitle.innerText="Reseñas";
+
+faqTitle.innerText="Qué esperar";
+
+q1.innerText="¿La consulta es gratis?";
+a1.innerText="Sí, es completamente gratis.";
+
+q2.innerText="¿Necesito preaprobación?";
+a2.innerText="No, Miguel te guía.";
+
+q3.innerText="¿Puedo comprar y vender?";
+a3.innerText="Sí, estrategia completa.";
+
+q4.innerText="¿Cuánto tarda?";
+a4.innerText="25–35 minutos.";
+
+q5.innerText="¿Qué pasa después?";
+a5.innerText="Recibes próximos pasos.";
+
+}else{
 location.reload();
 }
-
 }
-
 </script>
 
 </body>
